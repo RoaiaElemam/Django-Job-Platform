@@ -1,7 +1,8 @@
 JOB:
 -title
--creation date
+-create at
 -location
+#company
 -company name
 -company logo
 -company sub title

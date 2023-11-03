@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% load static %}
 {% block body %}
     
@@ -92,7 +91,7 @@
                                <h4>Job Overview</h4>
                            </div>
                           <ul>
-                              <li>Posted date : <span>12 Aug 2019</span></li>
+                              <li>Posted date : <span>12 Aug 2019  {{job.created_at|date:"d N o"}}</span></li>
                               <li>Location : <span>New York</span></li>
                               <li>Vacancy : <span>02</span></li>
                               <li>Job nature : <span>Full time</span></li>

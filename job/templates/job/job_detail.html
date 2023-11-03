@@ -92,10 +92,10 @@
                            </div>
                           <ul>
                               <li>Posted date : <span>12 Aug 2019  {{job.created_at|date:"d N o"}}</span></li>
-                              <li>Location : <span>New York</span></li>
-                              <li>Vacancy : <span>02</span></li>
+                              <li>Location : <span>{{job.location}}</span></li>
+                              <li>Vacancy : <span>{{job.vacancy}}</span></li>
                               <li>Job nature : <span>Full time</span></li>
-                              <li>Salary :  <span>$7,800 yearly</span></li>
+                              <li>Salary :  <span>{{job.job_tybe}}</span></li>
                               <li>Application date : <span>12 Sep 2020</span></li>
                           </ul>
                          <div class="apply-btn2">
@@ -107,12 +107,12 @@
                            <div class="small-section-tittle">
                                <h4>Company Information</h4>
                            </div>
-                              <span>Colorlib</span>
-                              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                              <span>{{job.company}}</span>
+                              <p>{{job.company.subtitle}}.</p>
                             <ul>
-                                <li>Name: <span>Colorlib </span></li>
-                                <li>Web : <span> colorlib.com</span></li>
-                                <li>Email: <span>carrier.colorlib@gmail.com</span></li>
+                                <li>Name: <span>{{job.company}} </span></li>
+                                <li>Web : <span> {{job.company.website}}</span></li>
+                                <li>Email: <span>{{job.company.email}}</span></li>
                             </ul>
                        </div>
                     </div>

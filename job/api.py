@@ -1,5 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+
+from rest_framework import generics
 from .serializer import JobSerializer
 from .models import Job
 
@@ -15,3 +17,14 @@ def job_detail_api(request,id):
     job=Job.objects.get(id=id)
     data=JobSerializer(job).data
     return Response({'Job':data})
+
+
+
+class JobListApi(generics.ListAPIView):
+    queryset=Job.objects.all()
+    serializer_class=JobSerializer
+
+
+class JobDetailApi(generics.RetrieveAPIView):
+    queryset=Job.objects.all()
+    serializer_class=JobSerializer

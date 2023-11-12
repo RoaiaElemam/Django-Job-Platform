@@ -6,25 +6,25 @@ from .serializer import JobSerializer
 from .models import Job
 
 #data---->jesson
-@api_view(['GET'])
-def job_list_api(request):
-    jobs=Job.objects.all()
-    data=JobSerializer(jobs,many=True).data
-    return Response({'Jobs':data})
+#@api_view(['GET'])
+#def job_list_api(request):
+   # jobs=Job.objects.all()
+    #data=JobSerializer(jobs,many=True).data
+    #return Response({'Jobs':data})
 
-@api_view(['GET'])
-def job_detail_api(request,id):
-    job=Job.objects.get(id=id)
-    data=JobSerializer(job).data
-    return Response({'Job':data})
+#@api_view(['GET'])
+#def job_detail_api(request,id):
+ #   job=Job.objects.get(id=id)
+  #  data=JobSerializer(job).data
+   # return Response({'Job':data})
 
 
 
-class JobListApi(generics.ListAPIView):
+class JobListApi(generics.ListCreateAPIView):
     queryset=Job.objects.all()
     serializer_class=JobSerializer
 
 
-class JobDetailApi(generics.RetrieveAPIView):
+class JobDetailApi(generics.RetrieveUpdateDestroyAPIView):
     queryset=Job.objects.all()
     serializer_class=JobSerializer
